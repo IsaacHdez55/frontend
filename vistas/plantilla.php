@@ -4,7 +4,7 @@
 
 	<meta charset="UTF-8">
 
-	<meta name="viewport" content="width-device-width, initial-scale-1.0, minium-scale-1.0, maximun-scale-1.0, user-scalable-no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 	<meta name="title" content="Tienda Virtual">
 
@@ -24,6 +24,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
 
 	<link rel="stylesheet" href="vistas/css/plantilla.css">
+
+	<link rel="stylesheet" href="vistas/css/cabezote.css">
 
 	<script src="vistas/js/plugins/jquery.min.js"></script>
 
