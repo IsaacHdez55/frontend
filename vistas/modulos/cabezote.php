@@ -101,7 +101,7 @@ HEADER
 			BLOQUE CATEGORÍAS Y BUSCADOR
 			======================================-->
 
-			<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+			<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
 
 				<!--=====================================
 				BOTÓN CATEGORÍAS
@@ -161,7 +161,7 @@ HEADER
 
 				</a>
 
-				<p>TU CESTA <span class="cantidadCesta"></span> <br> USD $ <span class="sumaCesta"></span></p>
+				<p>TU CESTA <span class="cantidadCesta">3</span> <br> USD $ <span class="sumaCesta">20</span></p>
 
 			</div>
 			
