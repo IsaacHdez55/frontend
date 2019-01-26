@@ -111,9 +111,7 @@ HEADER
 					
 					<p>CATEGORÍAS
 						<span class="pull-right">
-							<i class="fa fa-bars" aria-hidden="true">
-								
-							</i>
+							<i class="fa fa-bars" aria-hidden="true"></i>
 						</span>
 					</p>
 
