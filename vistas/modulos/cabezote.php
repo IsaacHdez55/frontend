@@ -17,6 +17,14 @@ TOP
 				
 				<ul>
 					
+				<?php
+
+					$social = ControladorPlantilla::ctrEstiloPlantilla();
+
+					var_dump(json_decode($social["redesSociales"],true));
+
+				?>
+
 					<li>
 						<a href="://facebook.com/" target="_blank">
 							<i class="fa fa-facebook redSocial facebookBlanco" aria-hidden="true "></i>
