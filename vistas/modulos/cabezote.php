@@ -21,39 +21,19 @@ TOP
 
 					$social = ControladorPlantilla::ctrEstiloPlantilla();
 
-					var_dump(json_decode($social["redesSociales"],true));
+					$jsonRedesSociales = json_decode($social["redesSociales"],true);
+					
+					foreach ($jsonRedesSociales as $key => $value) {
+						
+						echo '<li>
+								<a href="'.$value["url"].'" target="_blank">
+									<i class="fa '.$value["red"].' redSocial '.$value["estilo"].'" aria-hidden="true "></i>
+								</a>
+							</li>';
+
+					}
 
 				?>
-
-					<li>
-						<a href="://facebook.com/" target="_blank">
-							<i class="fa fa-facebook redSocial facebookBlanco" aria-hidden="true "></i>
-						</a>
-					</li>
-
-					<li>
-						<a href="://youtube.com/" target="_blank">
-							<i class="fa fa-youtube redSocial youtubeBlanco" aria-hidden="true "></i>
-						</a>
-					</li>
-
-					<li>
-						<a href="://twitter.com/" target="_blank">
-							<i class="fa fa-twitter redSocial twitterBlanco" aria-hidden="true "></i>
-						</a>
-					</li>
-
-					<li>
-						<a href="://google.com/" target="_blank">
-							<i class="fa fa-google redSocial googleBlanco" aria-hidden="true "></i>
-						</a>
-					</li>
-
-					<li>
-						<a href="://instagram.com/" target="_blank">
-							<i class="fa fa-instagram redSocial instagramBlanco" aria-hidden="true "></i>
-						</a>
-					</li>
 
 				</ul>
 
@@ -99,7 +79,7 @@ HEADER
 				
 				<a href="#">
 					
-					<img src="http://localhost/backend/vistas/img/plantilla/logo.png" class="img-responsive">
+					<img src="http://localhost/backend/<?php echo $social["logo"]; ?>" class="img-responsive">
 
 				</a>
 
