@@ -8,13 +8,27 @@ class ModeloProductos{
 MOSTRAR CATEGORÍAS
 =============================================*/
 
-	static public function mdlMostrarCategorias($tabla){
+	static public function mdlMostrarCategorias($tabla,$item, $valor){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+		if($item != null){
 
-		$stmt -> execute();
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-		return $stmt -> fetchAll();
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}else {
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
 
 		$stmt -> close();
 
@@ -26,11 +40,11 @@ MOSTRAR CATEGORÍAS
 MOSTRAR SUBCATEGORÍAS
 =============================================*/
 
-	static public function mdlMostrarSubCategorias($tabla, $id){
+	static public function mdlMostrarSubCategorias($tabla, $item, $valor){
 
-		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_categoria = :id_categoria");
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-		$stmt -> bindParam(":id_categoria",$id, PDO::PARAM_INT);
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
 
 		$stmt -> execute();
 
