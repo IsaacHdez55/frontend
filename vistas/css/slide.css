@@ -12,10 +12,10 @@ SLIDE
 
 #slide ul{
 	position:relative;
-	left:0%;
+	left:0;
 	margin:auto;
 	height:auto;
-	width:100%;
+	width:400%;
 	clear:both;
 	display: table;
 }
@@ -23,7 +23,7 @@ SLIDE
 #slide ul li{
 	position: relative;
 	float:left;
-	width:100%;
+	width:25%;
 }	
 
 #slide ul li img{
@@ -33,21 +33,37 @@ SLIDE
 #slide .slideOpcion1 img{
 	position:absolute;
 	opacity:1;
-	top:15%;
+	/*top:15%;
 	right:10%;
-	width:45%;
+	width:45%;*/
 }
 
 #slide .slideOpcion1 .textosSlide{
 	position:absolute;
-	width:40%;
+	/*width:40%;
 	top:20%;
-	left:10%;
+	left:10%;*/
 }
 
-#slide .slideOpciones1 h1{	
+#slide .slideOpcion2 img{
+	position:absolute;
+	opacity:1;
+	/*top:5%;
+	left: 5%;
+	width:25%;*/
+}
+
+#slide .slideOpcion2 .textosSlide{
+	position:absolute;
+	text-align: right;
+	/*width:40%;
+	top:15%;
+	right: 15%;*/
+}
+
+#slide .slideOpciones h1{	
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 40px;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	opacity:1;
 	top:-10%;
@@ -56,7 +72,7 @@ SLIDE
 
 #slide .slideOpciones h2{
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 30px;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	opacity:1;
 	top:-10%;
@@ -65,7 +81,7 @@ SLIDE
 
 #slide .slideOpciones h3{
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 20px;
 	font-family: 'Ubuntu Condensed', sans-serif;
 	opacity:1;
 	top:-10%;
@@ -88,4 +104,71 @@ SLIDE
 
 #slide .slideOpciones button span{
 	margin-left:10px;
+}
+
+/*=============================================
+FLECHAS
+=============================================*/
+
+#slide .flechas{
+	position: absolute;
+	font-size: 2em;
+	color: white;
+	cursor: pointer;
+	z-index: 2;
+}
+
+#slide #retroceder{
+	background: #666;
+	padding: 40px 15px 40px 10px;
+	top: 37%;
+	left: 0;
+	font-size: 22px;
+	opacity: 1;
+}
+
+#slide #avanzar{
+	background: #666;
+	padding: 40px 10px 40px 15px;
+	top: 37%;
+	right: 0;
+	font-size: 22px;
+	opacity: 1;
+}
+
+#slide #retroceder:hover, #slide #avamzar:hover{
+	background: #777;
+}
+
+#slide #retroceder:active, #slide #avamzar:active{
+	background: #444;
+}
+
+/*=============================================
+PAGINACION
+=============================================*/
+
+#slide  #paginacion{
+	position: absolute;
+	width: 100%;
+	margin: auto;
+	text-align:center;
+	line-height: 40px;
+	font-size: 12px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 1;
+	background: rgba(0,0,0,.05);
+}
+
+#slide #paginacion li{
+	display: inline-block;
+	margin: 0px 5px;
+	cursor: pointer;
+	opacity: .5;
+	color: white;
+	text-shadow: 0px 0px 5px #333;
+}
+#slide #paginacion li:first-child{
+	opacity: 1;
 }
