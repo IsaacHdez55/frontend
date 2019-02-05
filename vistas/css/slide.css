@@ -136,11 +136,11 @@ FLECHAS
 	opacity: 1;
 }
 
-#slide #retroceder:hover, #slide #avamzar:hover{
+#slide #retroceder:hover, #slide #avanzar:hover{
 	background: #777;
 }
 
-#slide #retroceder:active, #slide #avamzar:active{
+#slide #retroceder:active, #slide #avanzar:active{
 	background: #444;
 }
 
