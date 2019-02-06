@@ -11,6 +11,7 @@ var titulos2 = $("#slide h2");
 var titulos3 = $("#slide h3");
 var btnVerProducto = $("#slide button");
 var detenerIntervalo = false;
+var toogle = false;
 
 /*=============================================
 ANIMACIÓN INICIAL
@@ -139,7 +140,7 @@ setInterval(function(){
 			avanzar();
 
 		}
-		
+
 	}
 
 },3000)
@@ -163,5 +164,30 @@ $("#slide").mouseout(function(){
 	$("#slide #avanzar").css({"opacity":0})
 
 	detenerIntervalo = false;
+
+})
+
+/*=============================================
+ESCONDER SLIDE
+============================================*/
+
+$("#btnSlide").click(function(){
+	if(!toogle){
+
+		toogle = true;
+
+		$("#slide").slideUp("fast");
+
+		$("#btnSlide").html('<i class="fa fa-angle-down"></i>')
+
+	}else{
+
+		toogle = false;
+
+		$("#slide").slideDown("fast");
+
+		$("#btnSlide").html('<i class="fa fa-angle-up"></i>')
+
+	}
 
 })
