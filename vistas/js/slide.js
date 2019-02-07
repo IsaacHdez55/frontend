@@ -14,7 +14,7 @@ var detenerIntervalo = false;
 var toogle = false;
 
 $("#slide ul li").css({"width":100/$("#slide ul li").length + "%"});
-$("#slide ul li").css({"width":$("#slide ul li").length*100 + "%"}); 
+$("#slide ul").css({"width":$("#slide ul li").length*100 + "%"}); 
 
 /*=============================================
 ANIMACIÓN INICIAL
