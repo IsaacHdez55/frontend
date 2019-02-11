@@ -92,6 +92,7 @@ if(isset($_GET["ruta"])){
 
 	$item = "ruta";
 	$valor = $rutas[0];
+	$infoProducto = null;
 
 	/*=============================================
 	URL'S AMIGABLES DE CATEGORÍAS
@@ -112,12 +113,27 @@ if(isset($_GET["ruta"])){
 	$rutaSubCategorias = ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 
 	foreach ($rutaSubCategorias as $key => $value) {
+
 		if($rutas[0] == $value["ruta"]){
 
 			$ruta = $valor;
 
-		}		
+		}
+
 	}
+
+	/*=============================================
+	URL'S AMIGABLES DE PRODUCTOS
+	=============================================*/
+
+	$rutaProductos = ControladorProductos::ctrMostrarInfoProducto($item, $valor);
+
+	if($rutas[0] == $rutaProductos["ruta"]){
+
+		$infoProducto = $rutas[0];
+
+	}
+
 	
 	/*=============================================
 	LISTA BLANCA DE URL'S AMIGABLES
@@ -126,6 +142,10 @@ if(isset($_GET["ruta"])){
 	if($ruta != null || $rutas[0] == "articulos-gratis" || $rutas[0] == "lo-mas-vendido" || $rutas[0] == "lo-mas-visto"){
 
 		include "modulos/productos.php";
+
+	}else if($infoProducto != null){
+
+		include "modulos/infoproducto.php";
 
 	}else{
 

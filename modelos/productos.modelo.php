@@ -4,9 +4,9 @@ require_once "conexion.php";
 
 class ModeloProductos{
 
-/*=============================================
-MOSTRAR CATEGORÍAS
-=============================================*/
+	/*=============================================
+	MOSTRAR CATEGORÍAS
+	=============================================*/
 
 	static public function mdlMostrarCategorias($tabla,$item, $valor){
 
@@ -36,15 +36,15 @@ MOSTRAR CATEGORÍAS
 
 	}
 
-/*=============================================
-MOSTRAR SUBCATEGORÍAS
-=============================================*/
+	/*=============================================
+	MOSTRAR SUBCATEGORÍAS
+	=============================================*/
 
 	static public function mdlMostrarSubCategorias($tabla, $item, $valor){
 
 		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
 
-		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
 		$stmt -> execute();
 
@@ -81,6 +81,26 @@ MOSTRAR SUBCATEGORÍAS
 			return $stmt -> fetchAll();
 
 		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+	/*=============================================
+	MOSTRAR INFOPRODUCTO
+	=============================================*/
+
+	static public function mdlMostrarInfoProducto($tabla, $item, $valor){
+
+		$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+		$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+		$stmt -> execute();
+
+		return $stmt -> fetch();
 
 		$stmt -> close();
 
