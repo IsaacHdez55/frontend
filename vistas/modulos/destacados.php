@@ -1,3 +1,9 @@
+<?php 
+
+	$servidor = Ruta::ctrRutaServidor();
+
+ ?>
+
 <!--=====================================
 BANNER
 ======================================-->
@@ -137,8 +143,8 @@ BANNER
 
 								<figure>
 					
-									<a href="#" class="pixelProducto">
-										<img src="http://localhost/backend/'.$value["portada"].'" class="img-responsive">
+									<a href="'.$value["ruta"].'" class="pixelProducto">
+										<img src="'.$servidor.$value["portada"].'" class="img-responsive">
 									</a>
 
 								</figure>
@@ -147,48 +153,113 @@ BANNER
 					
 									<small>
 										
-										<a href="#" class="pixelProducto">
+										<a href="'.$value["ruta"].'" class="pixelProducto">
 											
 											'.$value["titulo"].'
 
 											<br>
-											<br>
 
-										</a>
+											<span style="color:rgba(0,0,0,0)">-</span>';
+
+											if($value["nuevo"] != 0){
+
+												echo '<span class="label label-warning fontSize">Nuevo</span> ';
+
+											}
+
+											if($value["oferta"] != 0){
+
+												echo '<span class="label label-warning fontSize">'.$value["descuentoOferta"].'% off</span>';
+
+											}
+
+										echo '</a>
 
 									</small>
 
 								</h4>
 
-								<div class="col-xs-6 precio">
+								<div class="col-xs-6 precio">';
 					
-									<h2><small>'.$value["precio"].'</small></h2>
+								if($value["precio"] == 0){
 
-								</div>
+									echo '<h2><small>GRATIS</small></h2>';
+								
+								}else{
 
-								<div class="col-xs-6 enlaces">
-					
-									<div class="btn-group pull-right">
-										
-										<button type="button" class="btn btn-default btn-xs deseos" idProductos="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
+									if($value["oferta"] != 0){
+
+										echo '<h2>
+
+												<small>
+							
+													<strong class="oferta">USD $'.$value["precio"].'</strong>		
+
+												</small>
+
+												<small>$'.$value["precioOferta"].'</small>
+
+											</h2>';
+
+									}else{
+
+										echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
+
+									}
+
+
+
+								}
+
+								echo '</div>
+
+									<div class="col-xs-6 enlaces">
+						
+										<div class="btn-group pull-right">
 											
-											<i class="fa fa-heart" aria-hidden="true"></i>
-
-										</button>
-
-										<a href="#" class="pixelProducto">
-											
-											<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+											<button type="button" class="btn btn-default btn-xs deseos" idProductos="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
 												
-												<i class="fa fa-eye" aria-hidden="true"></i>
+												<i class="fa fa-heart" aria-hidden="true"></i>
 
-											</button>
+											</button>';
 
-										</a>
+											if($value["tipo"] == "virtual"){
+
+												if($value["oferta"] != 0){
+
+													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProductos="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precioOferta"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+														
+														<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+													</button>';
+
+												}else{
+
+													echo '<button type="button" class="btn btn-default btn-xs agregarCarrito" idProductos="'.$value["id"].'" imagen="'.$servidor.$value["portada"].'" titulo="'.$value["titulo"].'" precio="'.$value["precio"].'" tipo="'.$value["tipo"].'" peso="'.$value["peso"].'" data-toggle="tooltip" title="Agregar al carrito de compras">
+														
+														<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+													</button>';
+
+												}
+
+												
+
+											}
+
+											echo '<a href="'.$value["ruta"].'" class="pixelProducto">
+												
+												<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
+													
+													<i class="fa fa-eye" aria-hidden="true"></i>
+
+												</button>
+
+											</a>
+
+										</div>
 
 									</div>
-
-								</div>
 
 							</li>';
 
