@@ -60,13 +60,27 @@ MOSTRAR SUBCATEGORÍAS
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function mdlMostrarProductos($tabla, $ordenar){
+	static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor){
 
-		$stmt = Conexion::conectar() ->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+		if($item != null){
 
-		$stmt -> execute();
+			$stmt = Conexion::conectar() ->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY $ordenar DESC LIMIT 4");
 
-		return $stmt -> fetchAll();
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}else{
+
+			$stmt = Conexion::conectar() ->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+
+			$stmt -> execute();
+
+			return $stmt -> fetchAll();
+
+		}
 
 		$stmt -> close();
 
