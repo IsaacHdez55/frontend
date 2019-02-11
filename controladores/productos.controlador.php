@@ -30,4 +30,18 @@ MOSTRAR CATEGORÍAS
 
 	}
 
+	/*=============================================
+	MOSTRAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrMostrarProductos($ordenar){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $ordenar);
+
+		return $respuesta;
+
+	}
+
 }

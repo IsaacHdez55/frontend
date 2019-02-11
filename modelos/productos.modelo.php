@@ -56,4 +56,22 @@ MOSTRAR SUBCATEGORÍAS
 
 	}
 
+	/*=============================================
+	MOSTRAR PRODUCTOS
+	=============================================*/
+
+	static public function mdlMostrarProductos($tabla, $ordenar){
+
+		$stmt = Conexion::conectar() ->prepare("SELECT * FROM $tabla ORDER BY $ordenar DESC LIMIT 4");
+
+		$stmt -> execute();
+
+		return $stmt -> fetchAll();
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
 }
