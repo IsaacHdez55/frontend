@@ -24,3 +24,9 @@ $.ajax({
 
 })
 
+/*=============================================
+CUADRICULA O LISTA
+=============================================*/
+
+var btnList = $(".btnList");
+console.log("btnList", btnList.length);

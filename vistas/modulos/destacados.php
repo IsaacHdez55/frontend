@@ -112,7 +112,7 @@ VITRINA DE PRODUCTOS GRATIS
 		VITRINA DE PRODUCTOS EN CUADRÍCULA
 		=====================================-->
 
-		<ul class="grid0" style="display: none;">
+		<ul class="grid0">
 			
 			<!-- Producto 1 -->
 
@@ -395,7 +395,7 @@ VITRINA DE PRODUCTOS GRATIS
 		VITRINA DE PRODUCTOS EN LISTA
 		======================================-->
 
-		<ul class="list0">
+		<ul class="list0" style="display: none;">
 			
 			<!-- PRODUCTO 1 -->
 
@@ -761,7 +761,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 		VITRINA DE PRODUCTOS EN CUADRÍCULA
 		=====================================-->
 
-		<ul class="grid1" style="display: none;">
+		<ul class="grid1">
 			
 			<!-- Producto 1 -->
 
@@ -1075,7 +1075,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
 		VITRINA DE PRODUCTOS EN LISTA
 		=====================================-->
 
-		<ul class="list1">
+		<ul class="list1" style="display: none;">
 			
 			<!-- PRODUCTO 1 -->
 
@@ -1257,7 +1257,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 		VITRINA DE PRODUCTOS EN CUADRÍCULA
 		=====================================-->
 
-		<ul class="grid2" style="display: none">
+		<ul class="grid2">
 			
 			<!-- Producto 1 -->
 
@@ -1597,7 +1597,7 @@ VITRINA DE PRODUCTOS MÁS VISTOS
 		VITRINA DE PRODUCTOS EN LISTA
 		=====================================-->
 
-		<ul class="list2">
+		<ul class="list2" style="display: none;">
 			
 			<!-- PRODUCTO 1 -->
 
