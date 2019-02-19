@@ -58,4 +58,18 @@ MOSTRAR CATEGORÍAS
 
 	}
 
+	/*=============================================
+	LISTAR PRODUCTOS
+	=============================================*/
+
+	static public function ctrListarProductos($ordenar, $item, $valor){
+
+		$tabla = "productos";
+
+		$respuesta = ModeloProductos::mdlListarProductos($tabla, $ordenar, $item, $valor);
+
+		return $respuesta;
+
+	}
+
 }
