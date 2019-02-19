@@ -39,7 +39,7 @@ BANNER
 	$item = "precio";
 	$valor = 0;
 
-	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope;
+	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 
 	}
 
