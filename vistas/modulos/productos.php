@@ -1,6 +1,7 @@
 <?php 
 
 	$servidor = Ruta::ctrRutaServidor();
+	$url = Ruta::ctrRuta();
 
  ?>
 
@@ -93,10 +94,14 @@ LISTAR PRODUCTOS
 		
 		<div class="row">
 
-			<ul class="breadcrumb fondoBreadcrumb lead">
+			<!--=====================================
+			MIGAS DE PAN O BREADCUMB
+			======================================-->
+
+			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
 				
-				<li><a href="#">INICIO</a></li>
-				<li class="active"><?php echo $rutas[0]; ?></li>
+				<li><a href="<?php echo $url ?>">INICIO</a></li>
+				<li class="active pagActiva"><?php echo $rutas[0]; ?></li>
 
 			</ul>
 		

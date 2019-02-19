@@ -90,3 +90,18 @@ $.scrollUp({
 	easingType: "easeOutQuint"
 
 });
+
+/*=============================================
+MIGAS DE PAN O BREADCUM
+=============================================*/
+
+var pagActiva = $(".pagActiva").html();
+
+if(pagActiva != null){
+
+	var regPagActiva = pagActiva.replace(/-/g, " ");
+
+	$(".pagActiva").html(regPagActiva);
+
+}
+
