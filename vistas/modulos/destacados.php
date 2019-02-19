@@ -30,13 +30,16 @@ BANNER
 
 	$rutasModulos = array("articulos-gratis", "lo-mas-vendido", "lo-mas-visto");
 
+	$base = 0;
+	$tope = 4;
+
 	if($titulosModulos[0] == "ARTÍCULOS GRATUITOS"){
 
 	$ordenar = "id";
 	$item = "precio";
 	$valor = 0;
 
-	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor);
+	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope;
 
 	}
 
@@ -46,7 +49,7 @@ BANNER
 	$item = null;
 	$Valor = null;
 
-	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor);
+	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 
 	}
 
@@ -56,7 +59,7 @@ BANNER
 	$item = null;
 	$Valor = null;
 
-	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor);
+	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
 
 	}
 
