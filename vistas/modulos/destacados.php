@@ -1,4 +1,4 @@
-<?php 
+, $modo<?php 
 
 	$servidor = Ruta::ctrRutaServidor();
 
@@ -38,8 +38,9 @@ BANNER
 	$ordenar = "id";
 	$item = "precio";
 	$valor = 0;
+	$modo = "DESC";
 
-	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+	$gratis = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
 	}
 
@@ -48,8 +49,9 @@ BANNER
 	$ordenar = "ventas";
 	$item = null;
 	$Valor = null;
+	$modo = "DESC";
 
-	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+	$ventas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
 	}
 
@@ -58,8 +60,9 @@ BANNER
 	$ordenar = "vistas";
 	$item = null;
 	$Valor = null;
+	$modo = "DESC";
 
-	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope);
+	$vistas = ControladorProductos::ctrMostrarProductos($ordenar, $item, $valor, $base, $tope, $modo);
 
 	}
 

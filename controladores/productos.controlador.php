@@ -34,11 +34,11 @@ MOSTRAR CATEGORÍAS
 	MOSTRAR PRODUCTOS
 	=============================================*/
 
-	static public function ctrMostrarProductos($ordenar, $item, $valor,$base, $tope){
+	static public function ctrMostrarProductos($ordenar, $item, $valor,$base, $tope, $modo){
 
 		$tabla = "productos";
 
-		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $ordenar, $item, $valor,$base, $tope);
+		$respuesta = ModeloProductos::mdlMostrarProductos($tabla, $ordenar, $item, $valor,$base, $tope, $modo);
 
 		return $respuesta;
 

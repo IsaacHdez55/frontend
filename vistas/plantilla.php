@@ -17,6 +17,8 @@
 
 	<?php
 
+		session_start();
+
 		$servidor = Ruta::ctrRutaServidor();
 
 		$icono = ControladorPlantilla::ctrEstiloPlantilla();
