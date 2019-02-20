@@ -163,9 +163,11 @@ if(isset($_GET["ruta"])){
 
 ?>
 
-	<!--==============================================
-	JAVASCRIPT PERSONALIZADAS
-	===============================================-->
+
+<input type="hidden" value="<?php echo $url; ?>" id="rutaOculta">
+<!--==============================================
+JAVASCRIPT PERSONALIZADAS
+===============================================-->
 
 <script src="<?php echo $url; ?>vistas/js/cabezote.js"></script>
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
