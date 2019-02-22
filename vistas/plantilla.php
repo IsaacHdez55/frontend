@@ -41,6 +41,8 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/font-awesome.min.css">
 
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/plugins/flexslider.css">
+
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
@@ -58,6 +60,8 @@
 
 	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/productos.css">
 
+	<link rel="stylesheet" href="<?php echo $url; ?>vistas/css/infoproducto.css">
+
 	<!--==============================================
 	PLUGINS DE JAVASCRIPT
 	===============================================-->
@@ -70,6 +74,8 @@
 
 	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.scrollUp.js"></script>
 
+	<script src="<?php echo $url; ?>vistas/js/plugins/jquery.flexslider.js"></script>
+	
 </head>
 
 <body>
@@ -179,6 +185,7 @@ JAVASCRIPT PERSONALIZADAS
 <script src="<?php echo $url; ?>vistas/js/plantilla.js"></script>
 <script src="<?php echo $url; ?>vistas/js/slide.js"></script>
 <script src="<?php echo $url; ?>vistas/js/buscador.js"></script>
+<script src="<?php echo $url; ?>vistas/js/infoproducto.js"></script>
 
 </body>
 </html>
