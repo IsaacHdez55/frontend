@@ -99,7 +99,7 @@ INFOPRODUCTO
 
 					echo '<div class="col-sm-6 co-xs-12">
 
-							<iframe class="videoPresentacion" src="https://www.youtube.com/embed/bg64AFnRnkc?rel=0&autoplay=1" width="100%" frameborder="0" allowfullscreen></iframe>
+							<iframe class="videoPresentacion" src="https://www.youtube.com/embed/bg64AFnRnkc?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
 
 						</div>';
 
@@ -190,7 +190,201 @@ INFOPRODUCTO
 				ESPACIO PARA EL PRODUCTO
 				======================================-->
 
+				<?php 
 
+				/*=============================================
+				TITULO DEL PRODUCTO
+				=============================================*/
+
+					if($infoproducto["oferta"] == 0){
+
+						if($infoproducto["nuevo"] == 0){
+
+							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'</h1>';
+
+						}else{
+
+							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
+								
+									<br>
+
+									<small>
+										
+										<span class="label label-warning">Nuevo</span>
+									
+									</small>
+	
+								</h1>';
+
+						}
+
+					}else{
+
+
+						if($infoproducto["nuevo"] == 0){
+
+							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
+									<br>
+									
+									<small>
+											
+										<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
+										
+									</small>
+
+								</h1>';
+
+						}else{
+
+							echo '<h1 class="text-muted text-uppercase">'.$infoproducto["titulo"].'
+									<br>
+									
+									<small>
+											
+										<span class="label label-warning">Nuevo</span>
+
+										<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
+										
+									</small>
+
+								</h1>';
+
+						}
+
+					}
+
+					/*=============================================
+					PRECIO
+					=============================================*/
+
+					if($infoproducto["precio"] == 0){
+
+						echo '<h2 class="text-muted">GRATIS</h2>';
+
+					}else{
+
+						if($infoproducto["oferta"] == 0){
+
+							echo '<h2 class="text-muted">USD $'.$infoproducto["precio"].'</h2>';
+
+						}else{
+
+							echo '<h2 class="text-muted">
+
+							<span>
+							
+								<strong class="oferta">USD $'.$infoproducto["precio"].'</strong>
+
+							</span>
+
+							<span>
+							
+								$'.$infoproducto["oferta"].'
+
+							</span>
+
+							</h2>';
+
+						}
+
+					}
+
+					/*=============================================
+					DESCRIPCION
+					=============================================*/
+
+					echo'<p>'.$infoproducto["descripcion"].'</p>';
+
+				?>
+					
+				<!--=====================================
+				CARACTERISTICAS DEL PRODUCTO
+				======================================-->
+
+				<hr>
+
+				<div class="form-group row">
+					
+					<?php 
+
+						if($infoproducto["detalles"] != null){
+
+							$detalles = json_decode($infoproducto["detalles"],true);
+
+							if($infoproducto["tipo"] == "fisico"){
+
+								if($detalles["Talla"] != null){
+
+									echo '<div class="col-md-3 col-xs-12">
+
+											<select class="form-control seleccionarDetalle" id="seleccionarTalla">
+													
+													<option value="">Talla</option>';
+
+													for($i = 0; $i <= count($detalles["Talla"]); $i++){
+
+														echo '<option value="'.$detalles["Talla"][$i].'">'.$detalles["Talla"][$i].'</option>';
+
+													}
+	
+											echo '</select>
+
+										</div>';
+
+								}
+
+								if($detalles["Color"] != null){
+
+									echo '<div class="col-md-3 col-xs-12">
+
+											<select class="form-control seleccionarDetalle" id="seleccionarColor">
+													
+													<option value="">Color</option>';
+
+													for($i = 0; $i <= count($detalles["Color"]); $i++){
+
+														echo '<option value="'.$detalles["Color"][$i].'">'.$detalles["Color"][$i].'</option>';
+
+													}
+	
+											echo '</select>
+
+										</div>';
+
+								}
+
+								if($detalles["Marca"] != null){
+
+									echo '<div class="col-md-3 col-xs-12">
+
+											<select class="form-control seleccionarDetalle" id="seleccionarMarca">
+													
+													<option value="">Marca</option>';
+
+													for($i = 0; $i <= count($detalles["Marca"]); $i++){
+
+														echo '<option value="'.$detalles["Marca"][$i].'">'.$detalles["Marca"][$i].'</option>';
+
+													}
+	
+											echo '</select>
+
+										</div>';
+
+								}
+
+							}else{
+
+
+
+							}
+
+						}
+
+					?>
+
+				</div>
+				
 
 				<!--=====================================
 				ZONA DE LUPA
