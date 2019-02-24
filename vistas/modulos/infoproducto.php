@@ -375,7 +375,123 @@ INFOPRODUCTO
 
 							}else{
 
+								echo '<div class="col-xs-12">
+										
+										<li>
+											<i style="margin-right:10px" class="fa fa-play-circle"></i> '.$detalles["Clases"].'
+										</li>
 
+										<li>
+											<i style="margin-right:10px" class="fa fa-clock-o"></i> '.$detalles["Tiempo"].'
+										</li>
+
+										<li>
+											<i style="margin-right:10px" class="fa fa-check-circle"></i> '.$detalles["Nivel"].'
+										</li>
+
+										<li>
+											<i style="margin-right:10px" class="fa fa-info-circle"></i> '.$detalles["Acceso"].'
+										</li>
+
+										<li>
+											<i style="margin-right:10px" class="fa fa-desktop"></i> '.$detalles["Dispositivo"].'
+										</li>
+
+										<li>
+											<i style="margin-right:10px" class="fa fa-trophy"></i> '.$detalles["Certificado"].'
+										</li>
+
+								</div>';
+
+							}
+
+						}
+
+						/*=============================================
+						ENTREGA
+						=============================================*/
+
+						if($infoproducto["entrega"] == 0){
+
+							if($infoproducto["precio"] == 0){
+
+								echo '<h4 class="col-xs-12">
+									
+										<hr>
+
+										<span class="label label-default" style="font-weight:100">
+											
+											<i class="fa fa-clock-o" style="margin-right:5px"></i>
+											Entrega inmediata |
+											<i class="fa fa-shopping-cart" style="margin: 0px 5px"></i>
+											'.$infoproducto["ventasGratis"].' Inscritos |
+											<i class="fa fa-eye" style="margin: 0px 5px"></i>
+											Visto por '.$infoproducto["vistasGratis"].' personas
+
+										</span>
+								
+									</h4>';
+
+
+							}else{
+
+								echo '<h4 class="col-xs-12">
+									
+										<hr>
+
+										<span class="label label-default" style="font-weight:100">
+											
+											<i class="fa fa-clock-o" style="margin-right:5px"></i>
+											Entrega inmediata |
+											<i class="fa fa-shopping-cart" style="margin: 0px 5px"></i>
+											'.$infoproducto["ventas"].' Ventas |
+											<i class="fa fa-eye" style="margin: 0px 5px"></i>
+											Visto por '.$infoproducto["vistas"].' personas
+
+										</span>
+								
+									</h4>';
+
+							}
+
+						}else{
+
+							if($infoproducto["precio"] == 0){
+
+								echo '<h4 class="col-xs-12">
+										
+										<hr>
+
+										<span class="label label-default" style="font-weight:100">
+											
+											<i class="fa fa-clock-o" style="margin-right:5px"></i>
+											'.$infoproducto["entrega"].' días hábiles para la entrega |
+											<i class="fa fa-shopping-cart" style="margin: 0px 5px"></i>
+											'.$infoproducto["ventasGratis"].' Solicitudes |
+											<i class="fa fa-eye" style="margin: 0px 5px"></i>
+											Visto por '.$infoproducto["vistasGratis"].' personas
+
+										</span>
+									
+								</h4>';
+							}else{
+
+								echo '<h4 class="col-xs-12">
+										
+										<hr>
+
+										<span class="label label-default" style="font-weight:100">
+											
+											<i class="fa fa-clock-o" style="margin-right:5px"></i>
+											'.$infoproducto["entrega"].' días hábiles para la entrega |
+											<i class="fa fa-shopping-cart" style="margin: 0px 5px"></i>
+											'.$infoproducto["ventas"].' Ventas |
+											<i class="fa fa-eye" style="margin: 0px 5px"></i>
+											Visto por '.$infoproducto["vistas"].' personas
+
+										</span>
+									
+									</h4>';
 
 							}
 
@@ -384,7 +500,16 @@ INFOPRODUCTO
 					?>
 
 				</div>
-				
+
+				<!--=====================================
+				BOTONES DE COMPRAS
+				======================================-->
+
+				<div class="row text-center">
+					
+					
+
+				</div>
 
 				<!--=====================================
 				ZONA DE LUPA
