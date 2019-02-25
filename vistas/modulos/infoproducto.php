@@ -505,9 +505,52 @@ INFOPRODUCTO
 				BOTONES DE COMPRAS
 				======================================-->
 
-				<div class="row text-center">
-					
-					
+				<div class="row">
+
+					<?php
+
+						if($infoproducto["precio"] == 0){
+
+							echo '<div class="col-md-6 col-xs-12">';
+
+								if($infoproducto["tipo"] == "virtual"){
+						
+									echo'<button class="btn btn-default btn-block btn-lg backColor">Acceder Ahora</button>';
+								}else {
+									echo'<button class="btn btn-default btn-block btn-lg backColor">Solicitar Ahora</button>';
+								}
+
+								echo '</div>';							
+
+						}else {
+
+							if($infoproducto["tipo"] == "virtual"){
+
+
+							echo '<div class="col-md-6 col-xs-12">
+						
+									<button class="btn btn-default btn-block btn-lg">Comprar Ahora</button>
+
+								</div>
+
+								<div class="col-md-6 col-xs-12">
+									
+									<button class="btn btn-default btn-block btn-lg backColor">Adicionar al Carrito de Compras <i class="fa fa-shopping-cart"></i></button>
+
+								</div>';
+
+							}else{
+
+								echo '<div class="col-md-6 col-xs-12">
+									
+									<button class="btn btn-default btn-block btn-lg backColor">Adicionar al Carrito de Compras <i class="fa fa-shopping-cart"></i></button>
+
+									</div>';
+
+							}
+
+						}
+					 ?>
 
 				</div>
 
